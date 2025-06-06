@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jak to działa? | Wakacje bez stresu</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <div class="menu-toggle" id="menu-toggle" aria-label="Menu nawigacyjne" tabindex="0" role="button">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul id="menu">
+      <li><a href="index.html">Zacznij teraz</a></li>
+      <li><a href="o-nas.html">O nas</a></li>
+      <li><a href="cennik.html">Cennik</a></li>
+      <li><a href="dlaczego-my.html">Dlaczego My?</a></li>
+      <li><a href="jak-to-dziala.html" class="active">Jak to działa?</a></li>
+      <li><a href="opinie-klientow.html">Opinie klientów</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+      <li><a href="polityka-prywatnosci.html">Polityka prywatności</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h1>Jak to działa?</h1>
+
+    <p>To proste! Dzięki nam planowanie wakacji staje się przyjemnością.</p>
+
+    <h2>Krok po kroku:</h2>
+    <ul>
+      <li><strong>Ty podajesz cel podróży i budżet</strong> – wszystko zaczyna się od Twoich potrzeb.</li>
+      <li><strong>My wyszukujemy najlepsze opcje</strong> – loty, noclegi, terminy, lokalne atrakcje.</li>
+      <li><strong>Doradzamy co najlepiej wybrać</strong> – dzielimy się wiedzą i rekomendacjami.</li>
+      <li><strong>Otrzymujesz gotowy plan</strong> – wygodnie, jasno i bez stresu.</li>
+      <li><strong>Rezerwujesz kiedy chcesz</strong> – pełna swoboda, wszystko masz pod kontrolą.</li>
+    </ul>
+
+    <p>Nie działamy jak biuro podróży – jesteśmy Twoimi doradcami. Ty decydujesz kiedy i co rezerwujesz.</p>
+  </div>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    menuToggle.addEventListener('click', () => {
+      menu.classList.toggle('show');
+    });
+
+    menuToggle.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        menu.classList.toggle('show');
+      }
+    });
+  </script>
+</body>
+</html>

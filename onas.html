@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wakacje bez stresu - O nas</title>
+  <style>
+    /* Tu wklej ten sam CSS co w index.html */
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+      color: #034f84;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    nav {
+      background: #022f40;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: #fff;
+      margin-left: 1.5rem;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    nav a:hover,
+    nav a.active {
+      color: #4fd1c5;
+      font-weight: 700;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .menu-toggle span {
+      background: #fff;
+      height: 3px;
+      width: 25px;
+      margin: 4px 0;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
+    .container {
+      max-width: 900px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      margin: 2rem auto;
+      padding: 40px 50px;
+      flex-grow: 1;
+    }
+
+    h1 {
+      font-weight: 700;
+      font-size: 2.8rem;
+      color: #022f40;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 1.2rem;
+      color: #03506f;
+    }
+
+    ul {
+      color: #03506f;
+      list-style-type: none;
+      padding-left: 0;
+    }
+    ul li {
+      background: #4fd1c5;
+      color: white;
+      margin: 0.5rem 0;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-weight: 600;
+      max-width: 300px;
+    }
+
+    /* Responsywność */
+    @media (max-width: 720px) {
+      nav {
+        justify-content: space-between;
+      }
+      .menu-toggle {
+        display: flex;
+      }
+      nav ul {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #022f40;
+        width: 200px;
+        flex-direction: column;
+        padding: 1rem;
+        border-radius: 0 0 0 10px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+        display: none;
+        list-style: none;
+      }
+      nav ul.show {
+        display: flex;
+      }
+      nav ul li {
+        margin: 0.8rem 0;
+      }
+      nav a {
+        margin: 0;
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="menu-toggle" id="menu-toggle" aria-label="Menu nawigacyjne" tabindex="0" role="button">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul id="menu">
+      <li><a href="index.html">Zacznij teraz</a></li>
+      <li><a href="o-nas.html" class="active">O nas</a></li>
+      <li><a href="cennik.html">Cennik</a></li>
+      <li><a href="dlaczego-my.html">Dlaczego My?</a></li>
+      <li><a href="jak-to-dziala.html">Jak to działa?</a></li>
+      <li><a href="opinie-klientow.html">Opinie klientów</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+      <li><a href="polityka-prywatnosci.html">Polityka prywatności</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h1>👋 O nas</h1>
+    <p>Jesteśmy parą podróżników z prawdziwą pasją do latania i odkrywania świata.</p>
+    <p>Mamy za sobą setki lotów i niezliczone godziny spędzone na poszukiwaniu najlepszych ofert – więc wiemy, jak bardzo może to być męczące i czasochłonne.</p>
+    <p>Wakacje bez stresu to miejsce, w którym dzielimy się naszą wiedzą i pomagamy Ci odnaleźć się w gąszczu ofert — ale to Ty decydujesz, co i kiedy rezerwujesz.</p>
+    <p>Nie jesteśmy biurem podróży — jesteśmy Twoimi niezależnymi doradcami, którzy oszczędzają Twój czas i nerwy.</p>
+
+    <h3>Z Nami podróżujesz:</h3>
+    <ul>
+      <li>bez stresu</li>
+      <li>wygodniej</li>
+      <li>mądrzej</li>
+    </ul>
+  </div>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    menuToggle.addEventListener('click', () => {
+      menu.classList.toggle('show');
+    });
+
+    menuToggle.addEventListener('
